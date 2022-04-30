@@ -8,3 +8,12 @@ import { getTestBed } from '@angular/core/testing';
 import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
 
 getTestBed().initTestEnvironment(BrowserDynamicTestingModule, platformBrowserDynamicTesting());
+
+const observe = jest.fn();
+const unobserve = jest.fn();
+
+// @ts-ignore
+window.IntersectionObserver = jest.fn(() => ({
+  observe,
+  unobserve,
+}))

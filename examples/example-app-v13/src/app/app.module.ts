@@ -16,6 +16,8 @@ import { TwainComponent } from './twain/twain.component';
 import { TwainService } from './twain/twain.service';
 import { WelcomeComponent } from './welcome/welcome.component';
 
+import { TuiPaletteModule } from '@taiga-ui/addon-editor';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -24,6 +26,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
     SharedModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
+    TuiPaletteModule
   ],
   providers: [HeroService, TwainService, UserService],
   declarations: [AppComponent, AboutComponent, BannerComponent, TwainComponent, WelcomeComponent],
